@@ -15,8 +15,8 @@ object minisum {
     @JvmStatic
     fun calaGap(inputList: List<Range>): Int {
         if (inputList === null || inputList.size < 2) return 0
-        var smallestEnd = 0
-        var largestStart = 0
+        var smallestEnd = inputList.first().to
+        var largestStart = inputList.last().from
         for (item in inputList) {
             largestStart = Math.max(largestStart, item.from)
             smallestEnd = Math.min(smallestEnd, item.to)
